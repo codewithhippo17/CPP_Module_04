@@ -1,0 +1,11 @@
+
+# Object files
+*.o
+
+# Executables
+Animal
+# IDE/Editor files
+.vscode/
+.DS_Store
+
+compile_commands.json
