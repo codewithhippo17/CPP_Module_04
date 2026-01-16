@@ -2,19 +2,15 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
-#include <string>
 
 class Dog : public Animal {
-protected:
-  std::string type;
-
 public:
   Dog();
-  Dog(const Dog &);
-  Dog &operator=(const Dog &);
+  Dog(const Dog &other);
+  Dog &operator=(const Dog &other);
   ~Dog();
 
-  void makeSound(void);
+  void makeSound() const;
 };
 
-#endif // CAT_HPP
+#endif
