@@ -1,8 +1,8 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-// #include "WrongAnimal.hpp"
-// #include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main() {
   std::cout << "--- CORRECT ANIMAL TESTS ---" << std::endl;
@@ -15,8 +15,8 @@ int main() {
   std::cout << "I Type: " << i->getType() << " " << std::endl;
   std::cout << std::endl;
 
-  i->makeSound(); // will output the cat sound!
-  j->makeSound(); // will output the dog sound!
+  i->makeSound();
+  j->makeSound();
   meta->makeSound();
 
   std::cout << std::endl << "--- DESTRUCTION ---" << std::endl;
@@ -24,19 +24,17 @@ int main() {
   delete j;
   delete i;
 
-  // std::cout << std::endl << "--- WRONG ANIMAL TESTS ---" << std::endl;
-  // const WrongAnimal *wrongMeta = new WrongAnimal();
-  // const WrongAnimal *wrongCat = new WrongCat();
-  //
-  // std::cout << std::endl;
-  // wrongCat
-  //     ->makeSound(); // Will output WrongAnimal sound because it's not
-  //     virtual!
-  // wrongMeta->makeSound();
-  //
-  // std::cout << std::endl << "--- DESTRUCTION ---" << std::endl;
-  // delete wrongMeta;
-  // delete wrongCat;
+  std::cout << std::endl << "--- WRONG ANIMAL TESTS ---" << std::endl;
+  const WrongAnimal *wrongMeta = new WrongAnimal();
+  const WrongAnimal *wrongCat = new WrongCat();
+
+  std::cout << std::endl;
+  wrongCat->makeSound();
+  wrongMeta->makeSound();
+
+  std::cout << std::endl << "--- DESTRUCTION ---" << std::endl;
+  delete wrongMeta;
+  delete wrongCat;
 
   return 0;
 }
