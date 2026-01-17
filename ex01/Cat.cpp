@@ -1,15 +1,15 @@
 #include "Cat.hpp"
 
 Cat::Cat() : Animal() {
+  std::cout << "Cat Default Constructor called" << std::endl;
   this->type = "Cat";
   this->brain = new Brain();
-  std::cout << "Cat Default Constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &other) : Animal(other) {
+  std::cout << "Cat Copy Constructor called" << std::endl;
   this->type = other.type;
   this->brain = new Brain(*other.brain);
-  std::cout << "Cat Copy Constructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &other) {
@@ -23,8 +23,8 @@ Cat &Cat::operator=(const Cat &other) {
 }
 
 Cat::~Cat() {
-  delete this->brain;
   std::cout << "Cat Destructor called" << std::endl;
+  delete this->brain;
 }
 
 void Cat::makeSound() const { std::cout << "Meow" << std::endl; }
